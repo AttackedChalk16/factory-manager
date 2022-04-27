@@ -1,0 +1,732 @@
+html, body {
+    margin: 0;
+    /* padding: 2.5vmin; */
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+  legend {
+    background-color: lightgray;
+    color: rgb(187, 0, 187);
+    padding: 3px 6px;
+  }
+
+  .output {
+    font: 1rem 'Fira Sans', sans-serif;
+  }
+
+  input {
+    margin: .4rem;
+  }
+
+  .emptyFactory {
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+    background-image: url("assets/img/emptyFactoryPicture.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vmin;
+    width: 20vw;
+    font-size: 20px;
+    color: black;
+    margin-left: 10px;
+    /* transform: translateY(60%); */
+  }
+
+  .builtFactory {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url("assets/img/factory.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vmin;
+    width: 20vw;
+    border-color: transparent;
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+    /* transform: translateY(60%); */
+  }
+
+  .horizontal { 
+    display: inline;
+  }
+
+  .sideButton {
+    font-size: 2.25vmin;
+    width: 15vmin;
+    height: 8vmin;
+    border-color: black;
+  }
+
+  .buttonsArea {
+    float: right;
+    width: 20vmin;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 12.5vmax);
+    transform: translateY(-50%, -50%);
+  }
+
+  /* Dongxin added*/
+  .researchButton{
+    float: right;
+    width: 30vmin;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 0%;
+    left: calc(100% - 12.5vmax);
+    transform: translateY(-50%, -50%);
+  }
+
+  /* Dongxin Added 2.18*/
+  .researchbutton{
+    font-size: 3vmin;
+    width: 25vmin;
+    height:15vmin;
+  }
+
+  /* .fieldset {
+    max-width: 1000px;
+    align-self: center;
+    text-align: left;
+    background-color: lightgray;
+    border-color: black;
+    margin: 0px 2px;
+    padding: 5.6px 12px 10px;
+    border: 2px 2px 2px 2px;
+  } */
+
+  .fieldset{
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-image: initial;
+    text-align: center;
+  }
+
+  .centerItem {
+    height: 100%;
+    width: 100%;
+    /* align-self: center; */
+  }
+
+  #xpBar {
+    width: 10%;
+    height: 30px;
+    z-index: 6;
+    background-color: greenyellow;
+    text-align: center; /* To center it horizontally */
+    line-height: 30px; /* To center it vertically */
+    color: grey;
+  }
+
+  #wholeProgressBar {
+    width: 80%;
+    z-index: 5;
+    background-color:grey;
+  }
+
+  /*
+  #Top {
+    position:   absolute;
+    z-index: 999;
+    top:        5px;
+    left:       5px;
+    text-align: left;
+    float: left;
+    bottom: 80%;
+  }
+  */
+  
+  #machineTable {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+  }
+
+  .machineButton {
+    /* margin: auto; */
+    font-size: 3vmin;
+    width: 25vmin;
+    height:15vmin;
+    /*background-color: rgb(255, 210, 127); */
+    border-radius: 5px;
+    border-color: #ffaf40;
+    border-width: 4px;
+    /*background: linear-gradient(#ffaf40, #ffdaa6, #ffaf40);*/
+    /*font-weight: bold; */
+  }
+
+  .builtMachine {
+    /* margin: auto; */
+    background-image: url("assets/img/basicMachine.jpg");
+    font-size: 3vmin;
+    width: 25vmin;
+    height:15vmin;
+  }
+  #factoryDiv {
+    display: inline;
+    height: 100vh;
+  }
+
+  #factoryContainer {
+    /* transform: translateY(20vmax); */
+    height: 100vh;
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+    margin: auto;
+  }
+
+  /* For the plan delivery scene */
+  .factoriesButton {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url("assets/img/factories.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vmin;
+    width: 40vmin;
+    border-color: transparent;
+    font-size: xx-large;
+    color: ivory;
+    padding-top: 150px;
+    padding-right: 100px;
+
+    float: left;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 38%;
+    right: calc(85% - 12.5vmax);
+    transform: translateY(-50%, -50%);
+  }
+
+  .storesButton {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url("assets/img/store.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vmin;
+    width: 40vmin;
+    border-color: transparent;
+    font-size: xx-large;
+    color: ivory;
+    padding-bottom: 110px;
+    /* transform: translateY(0%); */
+  }
+
+  .resourcesButton {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url("assets/img/resources.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40vmin;
+    width: 40vmin;
+    border-color: transparent;
+    font-size: xx-large;
+    color: ivory;
+    padding-bottom: 260px;
+    padding-left: 140px;
+
+    float: right;
+    margin: 0;
+    position: absolute;
+    bottom: 25%;
+    left: calc(85% - 12.5vmax);
+    transform: translateY(-50%, -50%);
+  }
+
+  .deliveryBtns {
+    float: right;
+    width: 20vmin;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 75%;
+    left: calc(100% - 12.5vmax);
+    transform: translateY(-50%, -50%);
+  }
+
+  /* End for plan deliveries scene */
+
+  .researchTable {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+  }
+
+  .researchBtn {
+    /* margin: auto; */
+    font-size: 3vmin;
+    width: 25vmin;
+    height:15vmin;
+  }
+
+  .highlight {
+    background-color: #AAFFAA;
+  }
+  /* Treant Styling */
+  /* optional Container STYLES */
+/* .chart { height: 400px; margin: 5px; width: 500px; margin: 5px auto; border: 3px solid #DDD; border-radius: 3px;  } */
+.Treant > .node {  }
+.Treant > p { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: bold; font-size: 12px; }
+.node-name { font-weight: bold;}
+
+#outerTreantDiv {
+  /* position: relative; */
+  height: 96vh;
+  transform: translateY(2%);
+  /* padding-top: 15vmin; */
+}
+#treantDiv {
+  height: 96vh;
+  /* transform: translateY(2%); */
+}
+#treantDiv > chart {
+  margin: auto;
+  
+  height: 96vh;
+  width: 90%;
+  transform: translateY(5%);
+  transform: translateX(-10%);
+  /* padding: 5vmin; */
+  /* pos */
+}
+#treantDiv > chart > svg {
+
+  transform: translateY(2%);
+  /* padding: 5vmin; */
+  /* pos */
+}
+/* #researchTreant {
+  padding-top: 5vmin !important;
+} */
+/* #researchTreant > svg {
+  padding-top: 15vmin;
+} */
+#researchDiv {
+  /* transform: translateY(10%); */
+  height: 100vh;
+}
+
+.researchNode {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    padding: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    background-color: #ffffff;
+    border: 1px solid #000;
+    width: 200px;
+    font-family: Tahoma;
+    font-size: 11px;
+    /* z-index: 1 !important; */
+    transition: all .1s ease-in-out;
+    transform: scale(1.00);
+
+    cursor: pointer;
+    transform: translateY(20%);
+}
+
+.machineNode {
+  background-color: #cccba7;
+}
+
+.productNode {
+  background-color: #ecece6;
+}
+
+.bonusNode {
+  background-color: #A2BDFD;
+}
+
+.inactiveNode {
+  /* background-color: rgba(0,0,0,.1); */
+  opacity: 0.4;
+}
+
+.researchNode:not(.inactiveNode):active { 
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,.1); 
+	margin: 1px 0 0 1px; 
+	border: 2px solid #D3D3CB;
+}
+
+.researchNode:not(.inactiveNode):hover {
+  box-shadow: 2px 2px 2px rgba(15, 216, 15, 0.5);
+  transform-origin: top left;
+  /* transform: translate(0, 16px) scale(1);  */
+  transition: all .1s ease-in-out;
+  transform: scale(1.05) translateY(20%);
+  /* transform: translateY(20%); */
+}
+
+.researchNode:not(.inactiveNode):hover .node-name{ 
+  color: #8B8B8B;
+  text-shadow: 1px 1px rgba(0,0,0,.15);
+}
+
+.researchNode img {
+    margin-right:  10px;
+}
+
+.normalText {
+  line-height: 1.0; 
+  margin-top: 0; 
+  margin-bottom: 0;
+}
+
+.whiteSpace {
+  line-height: 1.0; 
+  margin-top: 0; 
+  margin-bottom: 0;
+  font-size: 0.5vmin;
+}
+
+.subHeader {
+  margin-left: 5%;
+  line-height: 1.0; 
+  margin-top: 0; 
+  margin-bottom: 0;
+}
+
+.componentText {
+  margin-left: 10%;
+  line-height: 1.0; 
+  margin-top: 0; 
+  margin-bottom: 0;
+}
+
+.js-Dropdown {
+  display: inline-block;
+  font: 400 14px sans-serif;
+  position: relative;
+  width: 20vmin;
+  height: 7vmin;
+}
+.js-Dropdown-title {
+  background: #ffffff;
+  border: 1px groove #a5a5a5;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: 400 14px sans-serif;
+  height: 3em;
+  padding: 0.5em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.js-Dropdown-title:after {
+  border-color: #a5a5a5 transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px 12px;
+  content: '';
+  display: block;
+  height: 0;
+  position: absolute;
+  right: 1em;
+  top: 45%;
+  width: 0;
+}
+.js-Dropdown-list {
+  background: #ffffff;
+  border-left: 1px solid #a5a5a5;
+  border-right: 1px solid #a5a5a5;
+  box-sizing: border-box;
+  display: none;
+  height: 0;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  transition: 0.2s linear;
+  width: 100%;
+  z-index: 999;
+}
+.js-Dropdown-list.is-open {
+  display: block;
+  height: auto;
+  opacity: 1;
+}
+.js-Dropdown-list li {
+  border-bottom: 1px solid #a5a5a5;
+  cursor: pointer;
+  padding: 1em 0.5em;
+}
+.js-Dropdown-list li:hover {
+  background-color: #fff5e9;
+}
+.js-Dropdown-list li.is-selected {
+  background-color: #ffdfb6;
+}
+.js-Dropdown-optgroup {
+  border-bottom: 1px solid #a5a5a5;
+  color: #a5a5a5;
+  cursor: default;
+  padding: 1em 0.5em;
+  text-align: center;
+}
+
+
+.newgameButton{
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%,-50%);
+  font-size: 24px;
+  /* background: linear-gradient(90deg, rgb(236, 236, 145),rgb(128, 233, 142), rgb(166, 233, 245),rgb(236, 236, 145)); */
+  background: linear-gradient(90deg, #20b6fc,#fd59b6,#f1df3a,#20b6fc);
+  background-size: 300%;
+  width: 1000px;
+  height: 40px;
+  line-height: 40px;
+  /* text-align: center; */
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 1000px;
+  z-index: 1;
+}
+
+.newgameButton::before{
+  content: "";
+  position:absolute;
+  left: -7px;
+  right: -7px;
+  top: -7px;
+  bottom: -7px;
+  /* background: linear-gradient(90deg, rgb(236, 236, 145),rgb(128, 233, 142), rgb(166, 233, 245),rgb(236, 236, 145)); */
+  background: linear-gradient(90deg, #20b6fc,#fd59b6,#f1df3a,#20b6fc);
+  /* background: linear-gradient(90deg, rgb(236, 170, 107)); */
+  background-size: 300%;
+  border-radius: 1000px;
+  filter:blur(20px);
+  z-index: -1;
+}
+
+.newgameButton:hover:before{
+ animation: float 7s infinite;
+}
+
+.newgameButton:hover{
+  animation: float 7s infinite;
+ }
+
+@keyframes float {
+  100%{
+    background-position: -300% 0;
+  }
+}
+
+.selectedElement {
+  box-shadow: 0px 0px 8px 4px rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
+}
+
+.infoArea {
+  float: left;
+  width: 24vmin;
+  justify-content: center;
+  margin: 0;
+  margin-left: 60px;
+  position: absolute;
+  top: 33%;
+  background-color: rgba(247, 245, 245, 0.908);
+  border-radius: 25px;
+  box-shadow: inset 0px 0px 8px 4px rgb(244, 150, 10);
+  /* left: calc(20% - 12.5vmax); */
+  /* transform: translateY(-50%, -50%); */
+}
+
+.hiddenElement {
+  display: none;
+}
+
+.displayElement {
+  display: inline !important;
+}
+
+.suppliesbackground{
+  border-radius: 20px;
+}
+
+.infodisplay{
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow:-1px 15px 30px -12px #000;
+}
+
+.topbar{
+  height: 10px;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  /* background:#AAFFAA; */
+  /* background: url(facpic.png);
+  background-repeat: no-repeat;
+  background-size: 50%; */
+  position: relative;
+}
+
+.topbar img{
+  position: absolute;
+  top: -50%;
+  left:32%;
+}
+
+.info{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skill-list{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #A2BDFD;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.moneydiv{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.moneydiv h3{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+.moneydiv span{
+  font-size: 14px;
+  color:#fff
+}
+
+.wrapinfodiv{
+  display: flex;
+  justify-content:space-around;
+}
+
+.infodiv{
+  border:solid 5px #000;
+  padding: 10px;
+  height: 200px;
+  width: 180px;
+}
+
+.closebtn{
+  border-radius: 20px;
+}
+
+.label{
+  margin: 0;
+  text-align: left;
+}
+
+.factorystatus{
+  text-align: left;
+  margin-top: 10px;
+}
+
+.modalLabel {
+  text-align: left; 
+  margin-left: 250px;
+}
+
+.modalAmount {
+  text-align: left; 
+  margin-left: 270px;
+}
+
+#progressContainer {
+  transform: translateY(100%);
+  margin: auto;
+  width: 50%;
+  height: 4vh;
+  background-color: #ddd;
+  text-align: center;
+  border-radius: 10px;
+  /* border-color: #000; */
+  box-shadow: 0px 0px 8px 4px rgb(72, 72, 72);
+  border-color: rgb(0, 0, 0);
+}
+
+#progressBar {
+  /* transform: translateY(20%); */
+  width: 0%;
+  height: 30px;
+  background-color: #04AA6D;
+  border-radius: 10px;
+}
+
+#progressText {
+  transform: translateY(-185%);
+}
+
+#topPadding {
+  height: 0vh;
+}
+
+#innerFactoryDiv {
+  padding-top: 4vh;
+  height: 90vh;
+  transform: translateY(10%);
+}
+
+#timeDay {
+  transform: translateX(10%);
+  text-align: left;
+  z-index: 2;
+  position: absolute;
+  padding-left: 45px;
+  padding-top: 45px;
+}
+
+#checkDiv {
+  transform: translateY(400%);
+}
+
+.regionButton {
+  background-color: transparent;
+  border-color: transparent;
+  margin-right: 830px;
+  width: 45vmin;
+  height: 39vmin;
+}

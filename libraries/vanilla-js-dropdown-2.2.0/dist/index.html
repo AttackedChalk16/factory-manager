@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vanilla JavaScript Dropdown</title>
+    <link rel="stylesheet" href="vanilla-js-dropdown.css">
+  </head>
+  <body>
+    <div>
+      <label for="select">Select a color</label>
+      <select id="select">
+        <optgroup label="Red colors">
+          <option value="indianred">IndianRed</option>
+          <option value="salmon">Salmon</option>
+          <option value="crimson">Crimson</option>
+        </optgroup>
+        <optgroup label="Green colors"> 
+          <option value="chartreuse">Chartreuse</option>
+          <option value="seagreen">SeaGreen</option>
+          <option value="olive">Olive</option>
+        </optgroup>
+        <optgroup label="Blue colors"> 
+          <option value="aqua">Aqua</option>
+          <option value="steelblue" selected>SteelBlue</option>
+          <option value="royalblue">RoyalBlue</option>
+        </optgroup>
+      </select>
+    </div>
+    <script src="vanilla-js-dropdown.min.js"></script>
+    <script>
+      var birdSelect = new CustomSelect({
+          elem: 'select'
+      });
+    </script>
+  </body>
+</html>

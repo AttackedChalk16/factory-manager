@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Factory Manager Tycoon</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="libraries/treant-js/Treant.css">
+    <link rel="stylesheet" href="libraries/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="utf-8" />
+    
+    <meta name="keywords" content="factory manager tycoon, factory manager, tycoon, factory game, manager game, factory manager game, tycoon game">
+    <meta name="description" content="Factory Manager Tycoon is a simulation video game about building and managing factories. The game challenges players with open-ended factory management and development, and allowing players to construct and customize their own unique factories. The goal is to monopolize a market sector and not earn a negative net-worth. ">
+  </head>
+
+  <script src="src/js/objects/researchList.js" type="text/javascript"></script>
+  <script src="src/js/objects/machineList.js" type="text/javascript"></script>
+  <script src="src/js/objects/resourceList.js" type="text/javascript"></script>
+  <script src="src/js/objects/productList.js" type="text/javascript"></script>
+
+  <script src="src/js/pages/researchPage.js" type="text/javascript"></script>
+  <!-- Treant JS -->
+  <script src="libraries/treant-js/vendor/raphael.js"></script>
+  <script src="libraries/treant-js/Treant.js"></script>
+  
+  <script src="libraries/treant-js/vendor/jquery.min.js"></script>
+  <script src="libraries/treant-js/vendor/jquery.mousewheel.js"></script>
+  <script src="libraries/treant-js/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+  
+  <!-- <script src="simple-scrollbar.js"></script> -->
+  <!-- End of Treant JS scripts -->
+
+  <!--  -->
+  <script src="libraries/vanilla-js-dropdown-2.2.0/src/javascript/vanilla-js-dropdown.js"></script>
+  <link rel="stylesheet" rel="libraries/vanilla-js-dropdown-2.2.0/dist/vanilla-js-dropdown.css">
+  <!--  -->
+
+  <script src="src/js/classes/reactive.js" type="text/javascript"></script>
+  <script src="src/js/classes/researchNode.js" type="text/javascript"></script>
+  <script src="src/js/classes/factory.js" type="text/javascript"></script>
+  <script src="src/js/classes/machine.js" type="text/javascript"></script>
+  <script src="src/js/classes/region.js" type="text/javascript" ></script>
+  <script src="src/js/classes/gameState.js" type="text/javascript"></script>
+
+  <script src="src/js/interval.js" type="text/javascript"></script>
+  <script src="src/js/classes/truck.js" type="text/javascript"></script>
+
+  <script src="src/js/pages/innerFactory.js" type="text/javascript"></script>
+  <script src="src/js/pages/planDelivery.js" type="text/javascript"></script>
+  <script src="src/js/pages/originalpage.js" type="text/javascript"></script>
+  <script src="src/js/pages/Welcome.js" type="text/javascript"></script>
+
+
+
+  <header id="timeDay">
+  </header>
+
+
+  <!-- Body starts here -->
+  <div id="topPadding"></div> 
+  <body background="assets/img/Welcome.jpg"  class="centerItem">
+    <!-- <canvas id="glcanvas" ></canvas> -->
+    
+
+    <div class="horizontal" id="initial">
+      
+    </div>
+
+  </body>
+
+  <script>
+    var currentRegion = 0;
+    createWelcomePage()
+  </script>
+  <!-- End of body -->
+</html>
+

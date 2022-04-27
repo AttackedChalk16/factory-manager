@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+
+        title="Vanilla JavaScript Dropdown"
+        link(rel="stylesheet" href="vanilla-js-dropdown.css")
+
+    body
+        
+        div
+            label(for="select") Select a color
+            select#select
+                optgroup(label="Red colors")
+                    option(value="indianred") IndianRed
+                    option(value="salmon") Salmon
+                    option(value="crimson") Crimson
+                optgroup(label="Green colors") 
+                    option(value="chartreuse") Chartreuse
+                    option(value="seagreen") SeaGreen
+                    option(value="olive") Olive
+                optgroup(label="Blue colors") 
+                    option(value="aqua") Aqua
+                    option(value="steelblue" selected) SteelBlue
+                    option(value="royalblue") RoyalBlue
+
+        script(src="vanilla-js-dropdown.min.js")
+        script.
+            var birdSelect = new CustomSelect({
+                elem: 'select'
+            });
