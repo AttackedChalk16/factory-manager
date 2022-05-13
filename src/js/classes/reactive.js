@@ -4,7 +4,7 @@
 class Reactive {
     constructor (obj) {
         this.contents = obj;
-        this.listeners = {};
+        this.listeners = new Map();
         this.makeReactive(obj);
     }
 
@@ -29,17 +29,25 @@ class Reactive {
         });
     }
 
-    listen(prop, handler) {
-        if (!this.listeners[prop]) this.listeners[prop] = [];
+    listen(prop, id, handler) {
+        if (!this.listeners.has(prop)) this.listeners.set(prop, new Map());
 
-        this.listeners[prop].push(handler);
+        this.listeners.get(prop).set(id, handler);
     }
 
     notify(prop) {
-        if (!this.listeners[prop]) {
+        if (!this.listeners.has(prop)) {
             return;
         }
-        this.listeners[prop].forEach(listener => listener(this.contents[prop]));
+
+        for (const [listenerId, listener] of this.listeners.get(prop).entries()) {
+            // window.gameState.resources.set(key, value);
+            // list
+            console.log(listenerId)
+            console.log(listener)
+            listener(this.contents[prop]);
+        }
+        // this.listeners.get(prop).forEach(listener => listener(this.contents[prop]));
     }
 }
 

@@ -28,7 +28,7 @@ function setHeader(){
   // let h3_prodct = document.createElement("h3");
   // h3_time.innerHTML = "8:00am"
   h3_date.innerHTML = "January, 1st";
-  window.gameState.reactiveData.listen('date', 
+  window.gameState.reactiveData.listen('date', "timeDay",
     (change) => {
       let day = change.getDate();
       if (day > 3 && day < 21) {
@@ -45,7 +45,7 @@ function setHeader(){
       document.getElementById("dateTime").innerHTML = change.toLocaleString('default', { month: 'long' }) + ", " + day;
     })
       h3_money.innerHTML = "Money: $" + getCash().toLocaleString('en-US');
-  window.gameState.reactiveData.listen('cash', 
+  window.gameState.reactiveData.listen('cash', "cashCounter",
     (change) => document.getElementById("money").innerHTML = "Money: $" + change.toLocaleString('en-US'));
   // h3_prodct.innerHTML = "Products: 0"
 

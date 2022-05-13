@@ -393,7 +393,7 @@ function createFactoryInfo() {
     productNumHeader.innerHTML = window.gameState.regions[currentRegion].factories[factoryNum].productType.name + ":\t\t\t" + 
         window.gameState.regions[currentRegion].reactiveData.contents[productString].toFixed(2);
 
-    window.gameState.regions[currentRegion].reactiveData.listen(productString, 
+    window.gameState.regions[currentRegion].reactiveData.listen(productString,  (productString+"Count"),
         (change) => {
             let countString = window.gameState.regions[currentRegion].factories[factoryNum].productType.name;
             countString = countString + ":\t\t\t" + change.toFixed(2);
@@ -414,7 +414,7 @@ function createFactoryInfo() {
         // CHANGE WHEN MULTIPLE REGIONS ADDED
         resourceNumHeader.innerHTML = window.gameState.resources.get(resourceString).name + ":\t\t\t" 
             + window.gameState.regions[currentRegion].reactiveData.contents[resourceString].toFixed(2);
-        window.gameState.regions[currentRegion].reactiveData.listen(resourceString, 
+        window.gameState.regions[currentRegion].reactiveData.listen(resourceString, (resourceString+"Count"), 
             (change) => {
                 let countString = window.gameState.resources.get(resourceString).name;
                 // let countString = window.gameState.regions[currentRegion].factories[factoryNum].resources.get(resourceString).name;

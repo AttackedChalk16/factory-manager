@@ -250,6 +250,10 @@ class Factory {
         // let 
         // possibleProduct = Math.min(possibleProduct, this.productionStats.this.productionStats.averageOutput);
 
+        if (possibleProduct <= 0.0001) {
+            return 0.0;
+        }
+
         for (const [key, value] of this.productType.components.entries()) {
             let resourceString = "" + key;
             // Subtract the amount of a resource required to produce from the resources
