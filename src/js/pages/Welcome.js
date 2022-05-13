@@ -7,7 +7,7 @@ function createWelcomePage(){
       const originaldiv = document.getElementById("initial")
 
       let welcomeDiv = Object.assign(document.createElement('div'),{id:"welcomeDiv"});
-      let checkDiv = Object.assign(document.createElement('div'),{id:"checkDiv"});
+      // let checkDiv = Object.assign(document.createElement('div'),{id:"checkDiv"});
 
       // New game button
       let btn = document.createElement("a")
@@ -18,17 +18,17 @@ function createWelcomePage(){
       btn.href = "javascript:;"
 
       // Create checkbox
-      let checkTutorial = document.createElement("input")
-      checkTutorial.type = "checkbox"
-      checkTutorial.id = "doTutorial"
+      // let checkTutorial = document.createElement("input")
+      // checkTutorial.type = "checkbox"
+      // checkTutorial.id = "doTutorial"
 
       // Create label
-      let label = document.createElement("label")
-      label.innerHTML = "Do Tutorial"
-      label.style = "font-size: 20px";
+      // let label = document.createElement("label")
+      // label.innerHTML = "Do Tutorial"
+      // label.style = "font-size: 20px";
 
-      checkDiv.append(checkTutorial, label);
-      welcomeDiv.append(btn, checkDiv);
+      // checkDiv.append(checkTutorial, label);
+      welcomeDiv.append(btn); //, checkDiv
 
       document.body.replaceChild(welcomeDiv, originaldiv);
 }
@@ -43,5 +43,5 @@ function newgame(){
   progressContainer.append(progressText);
   topPadding.append(progressContainer);
 
-  buildfactorypage(document.getElementById("doTutorial").checked)
+  buildfactorypage()
 }
