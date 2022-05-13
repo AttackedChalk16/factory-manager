@@ -18,15 +18,9 @@ var nextFactory = 1;
 function setHeader(){
   const header = document.getElementById("timeDay")
 
-  // <h3>8:00am</h3>
-  //   <h3>January 1st</h3>
-  //   <h3 id="money">Money: $1,000</h3>
-  //   <h3 id="numProducts">Products: 0</h3>
-  // let h3_time = document.createElement("h3");
   let h3_date = document.createElement("h3");
   let h3_money = document.createElement("h3");
-  // let h3_prodct = document.createElement("h3");
-  // h3_time.innerHTML = "8:00am"
+
   h3_date.innerHTML = "January, 1st";
   window.gameState.reactiveData.listen('date', "timeDay",
     (change) => {
@@ -129,12 +123,7 @@ function buildfactorypage(isTutorial) {
     // <div class="buttonsArea">
     let SideBtnDiv = document.createElement("div")
     SideBtnDiv.className = "buttonsArea"
-    // <button onclick="manageDelivery()" class="sideButton" id = Deliveries>Manage Deliveries</button>
-    //   <button onclick="editSupplies()" class="sideButton" id = Supplies>Supplies</button>
-    //   <button onclick="editMachines()" class="sideButton" id = Machines>Machines</button>
-    //   <button onclick="editPersonnel()" class="sideButton" id = Personnel>Personnel</button>
-    //   <button onclick="buildItems()" class="sideButton" id = Build>Build Items</button>
-    //   <button onclick="generateResearchPage()" class="sideButton" id = "research">Research</button>
+
     let DeliveriesBTN = document.createElement("button")
     let SuppliesBTN = document.createElement("button")
     let MachinesBTN = document.createElement("button")
@@ -179,12 +168,6 @@ function buildfactorypage(isTutorial) {
     MachinesBTN.disabled = true
 
     if(isTutorial == true) {
-      // <!-- This has the welcoming message -->
-      // <div style="padding-left: 15.6vmin;">
-      // <form style="padding: 3.8vmin 0px 9.5vmin 0px">
-      // <fieldset id="messageBox" onclick="guideMessage()" class="fieldset" style="background-color: ghostwhite;">
-      //   Hello! My name is Mr. Murphy! I am here to help you become a successful entrepreneur! (Click here to continue)
-      // </fieldset>
       let messageDiv = document.createElement("div")
       messageDiv.style.cssText = "padding-left: 15.6vmin;"
 
@@ -229,16 +212,6 @@ function buildfactorypage(isTutorial) {
     // document.body.replaceChild(FactoryDiv, originaldiv);
     document.body.replaceChild(FactoryDiv, welcomeDiv);
     document.body.style.backgroundImage = "url('assets/img/factoryBackground.png')";
-
-
-
-
-    //console.log("check")
-    //console.log(document.getElementById("supplies_money"))
-
-  //   window.gameState.reactiveData.listen('cash', 
-  // (change) => document.getElementById("supplies_money").innerHTML = "$" + change.toLocaleString('en-US'));
-    
 }
 
 function supplies(){
@@ -274,8 +247,8 @@ function supplies(){
   let factoryinfoDiv = document.createElement('div')
   factoryinfoDiv.id = "infosuppliesModalDiv"
   factoryinfoDiv.className = "info"
-  // let factorytitle = document.createElement('h1')
-  // factorytitle.innerText = "Defualt"
+  // let factoryTitle = document.createElement('h1')
+  // factoryTitle.innerText = "Defualt"
 
 
 // checkbox
@@ -284,54 +257,38 @@ function supplies(){
   let infodiv = Object.assign(document.createElement('table'),{className:"wrapinfodiv"});
   let machinediv = Object.assign(document.createElement('div'),{className:"infodiv"});
   let blueprintdiv = Object.assign(document.createElement('div'),{className:"infodiv"});
-  let productdiv = Object.assign(document.createElement('div'),{className:"infodiv"});
-  let resourcediv = Object.assign(document.createElement('div'),{className:"infodiv"});
-  let factoriesdiv = Object.assign(document.createElement('div'),{className:"infodiv"});
+  let productDiv = Object.assign(document.createElement('div'),{className:"infodiv"});
+  let resourceDiv = Object.assign(document.createElement('div'),{className:"infodiv"});
+  let factoriesDiv = Object.assign(document.createElement('div'),{className:"infodiv"});
 
-  // // machinediv
-  // for(i of window.gameState.machines){
-  //   let id = "supplies_" + i[0]
-  //   let machinedivelement = Object.assign(document.createElement('Label'))
-  //   machinedivelement.id = id
-  //   machinediv.append(machinedivelement)
-  // }
-
-  // // blueprintdiv
-  // for ( i of window.gameState.products){
-  //   let id = "supplies_" + i[0] + "_blueprint"
-  //   let blueprintdivelement = Object.assign(document.createElement('Label'))
-  //   blueprintdivelement.id = id
-  //   blueprintdiv.append(blueprintdivelement)
-  // }
-
-  // productdiv
-  let producttitle = Object.assign(document.createElement('h4'),{innerHTML:"Product"})
-  productdiv.append(producttitle)
-  for( i of window.gameState.products){
-    let id = "supplies_" + i[0] + "_products"
-    let productdivelement = Object.assign(document.createElement('h6'),{className:"label"})
-    productdivelement.id = id
-    productdiv.append(productdivelement)
+  // productDiv
+  let productTitle = Object.assign(document.createElement('h4'),{innerHTML:"Product"})
+  productDiv.append(productTitle)
+  for(const [productId, product] of window.gameState.products){
+    let id = "supplies_" + productId + "_products"
+    let productDivElement = Object.assign(document.createElement('h6'),{className:"label"})
+    productDivElement.id = id
+    productDiv.append(productDivElement)
   }
 
-  // resourcediv
+  // resourceDiv
   let resourcetitle =  Object.assign(document.createElement('h4'),{innerHTML:"Resource"})
-  resourcediv.append(resourcetitle)
-  for(i of window.gameState.resources)
+  resourceDiv.append(resourcetitle)
+  for(const [resourceId, resource] of window.gameState.resources)
   {
-    let id = "supplies_" + i[0] + "_resources"
-    let resourcedivelement = Object.assign(document.createElement('h6'),{className:"label"})
-    resourcedivelement.id = id
-    resourcediv.append(resourcedivelement)
+    let id = "supplies_" + resourceId + "_resources"
+    let resourceDivElement = Object.assign(document.createElement('h6'),{className:"label"})
+    resourceDivElement.id = id
+    resourceDiv.append(resourceDivElement)
   }
 
   // factory status
-  let factorytitle =  Object.assign(document.createElement('h4'),{innerHTML:"Factory Status"})
+  let factoryTitle =  Object.assign(document.createElement('h4'),{innerHTML:"Factory Status"})
 
-  let freefactorydiv = Object.assign(document.createElement('div'),{className:"factorystatus"}) 
+  let freeFactoryDiv = Object.assign(document.createElement('div'),{className:"factorystatus"}) 
   let fiftydiv = Object.assign(document.createElement('div'),{className:"factorystatus"}) 
   let hundreddiv = Object.assign(document.createElement('div'),{className:"factorystatus"})
-  factoriesdiv.append(factorytitle,freefactorydiv,fiftydiv,hundreddiv)
+  factoriesDiv.append(factoryTitle,freeFactoryDiv,fiftydiv,hundreddiv)
 
   let freefactorycheck = Object.assign(document.createElement('input'),{id:"freecheck",type:"checkbox"})
   let fiftydivcheck = Object.assign(document.createElement('input'),{id:"fiftycheck",type:"checkbox"})
@@ -339,7 +296,7 @@ function supplies(){
   let freefactorylabel = Object.assign(document.createElement('label'),{innerHTML:"Free Factory"})
   let fiftydivlabel = Object.assign(document.createElement('label'),{innerHTML:"$50,000"})
   let hundredlabel = Object.assign(document.createElement('label'),{innerHTML:"$100,000"})
-  freefactorydiv.append(freefactorycheck,freefactorylabel)
+  freeFactoryDiv.append(freefactorycheck,freefactorylabel)
   fiftydiv.append(fiftydivcheck,fiftydivlabel)
   hundreddiv.append(hundredcheck,hundredlabel)
 
@@ -347,11 +304,11 @@ function supplies(){
   fiftydivcheck.disabled = true
   hundredcheck.disabled = true
 
-  // infodiv.append(machinediv,blueprintdiv,productdiv,resourcediv)
-  infodiv.append(productdiv,factoriesdiv,resourcediv)
+  // infodiv.append(machinediv,blueprintdiv,productDiv,resourceDiv)
+  infodiv.append(productDiv,factoriesDiv,resourceDiv)
 
 
-  // factoryinfoDiv.append(factorytitle,infodiv)
+  // factoryinfoDiv.append(factoryTitle,infodiv)
   factoryinfoDiv.append(infodiv)
 
 
@@ -719,14 +676,40 @@ function buildFactory(){
     // }
 
     // product:
-    for (i of window.gameState.products){
-      document.getElementById("supplies_" + i[0] + "_products").innerHTML =i[1].name+": "+ window.gameState.regions[currentRegion].reactiveData.contents[i[0]] +"<br>"
+    for (const [productId, product] of window.gameState.products){
+      // document.getElementById("supplies_" + productId + "_products").innerHTML = product.name+": "+ window.gameState.regions[currentRegion].reactiveData.contents[productId] +"<br>"
+
+      let productElement = document.getElementById("supplies_" + productId + "_products");
+      productElement.innerHTML = product.name + ": "+  window.gameState.regions[currentRegion].reactiveData.contents[productId].toFixed(2)  +"<br>"
+
+      window.gameState.regions[currentRegion].reactiveData.listen(productId, (productId+"SuppliesModalCount"), 
+        (change) => {
+            let productElement = document.getElementById("supplies_" + productId + "_products");
+            // If the resource element is not found, remove it as a listener
+            if (productElement != null) {
+              productElement.innerHTML = product.name + ": "+  change.toFixed(2)  +"<br>";
+            } else {
+                window.gameState.regions[currentRegion].reactiveData.removeListener(productId, (productId+"SuppliesModalCount"));
+            }
+        });
     }
 
     // resource:
-    for(i of window.gameState.resources){
-      if (!window.gameState.products.has(i[0])){
-        document.getElementById("supplies_" + i[0] + "_resources").innerHTML = i[1].name + ": "+  window.gameState.regions[currentRegion].reactiveData.contents[i[0]]  +"<br>"
+    for(const [resourceId, resource] of window.gameState.resources){
+      if (!window.gameState.products.has(resourceId)){
+        let resourceElement = document.getElementById("supplies_" + resourceId + "_resources");
+        resourceElement.innerHTML = resource.name + ": "+  window.gameState.regions[currentRegion].reactiveData.contents[resourceId].toFixed(2)  +"<br>"
+
+        window.gameState.regions[currentRegion].reactiveData.listen(resourceId, (resourceId+"SuppliesModalCount"), 
+          (change) => {
+              let resourceElement = document.getElementById("supplies_" + resourceId + "_resources");
+              // If the resource element is not found, remove it as a listener
+              if (resourceElement != null) {
+                  resourceElement.innerHTML = resource.name + ": "+  change.toFixed(2)  +"<br>";
+              } else {
+                  window.gameState.regions[currentRegion].reactiveData.removeListener(resourceId, (resourceId+"SuppliesModalCount"));
+              }
+          });
       }
     }
 

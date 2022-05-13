@@ -32,8 +32,8 @@ function generateMachineTable(node, capacity) {
         cell1.appendChild(btn1);
         // console.log("The machine in cell" + (i-1) + " is a: " + factory.machines[i-1]);
         if (factory.machines[i-1] != null) {
-            console.log("trying to recreate machine select in slot: " + (i-1));
-            console.log(cell1.id);
+            // console.log("trying to recreate machine select in slot: " + (i-1));
+            // console.log(cell1.id);
             addMachineOptions(cell1, factory.machines[i-1], cell1);
         }
 
@@ -45,8 +45,8 @@ function generateMachineTable(node, capacity) {
         cell2.appendChild(btn2);
 
         if (factory.machines[i+3] != null) {
-            console.log("trying to recreate machine select in slot: " + (i+3));
-            console.log(cell2.id);
+            // console.log("trying to recreate machine select in slot: " + (i+3));
+            // console.log(cell2.id);
             addMachineOptions(cell2, factory.machines[i+3], cell2);
         }
 
@@ -67,11 +67,11 @@ function generateMachineTable(node, capacity) {
     for (let i = 2; i <= 8; i++) {
         table.querySelector("#machine" + (i)).disabled = true
         if (window.gameState.regions[currentRegion].factories[factoryNum].machines[i-1] != null) {
-            console.log(i)
+            // console.log(i)
             table.querySelector("#machine" + (i)).disabled = false;
         }
         if (window.gameState.regions[currentRegion].factories[factoryNum].machines[i-2] != null) {
-            console.log(i)
+            // console.log(i)
             table.querySelector("#machine" + (i)).disabled = false;
         }
     }
@@ -150,16 +150,16 @@ function addMachineOptions(machine, selectedMachine, nonDocumentElement = null) 
     tableEntry.append(machineDropdown);
     if (nonDocumentElement != null) {
         
-        console.log(machine);
+        // console.log(machine);
         // (selectId.replace("machineSelect", ""));
         let machineString = machine.id.replace("cell", "")
-        console.log("creating a machineSelect with index " + machineString + " and a nonDocument element")
+        // console.log("creating a machineSelect with index " + machineString + " and a nonDocument element")
         var customMachineDropdown = new CustomSelect({
             elem: "machineSelect" + machineString
         }, machineDropdown);
     } else {
-        console.log("creating a machineSelect with index " + machine.machineIndex)
-        console.log(machine);
+        // console.log("creating a machineSelect with index " + machine.machineIndex)
+        // console.log(machine);
         var customMachineDropdown = new CustomSelect({
             elem: "machineSelect" + machine.machineIndex
         });
