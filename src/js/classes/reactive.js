@@ -35,6 +35,16 @@ class Reactive {
         this.listeners.get(prop).set(id, handler);
     }
 
+    removeListener(prop, id) {
+        if (!this.listeners.has(prop)) { // || !this.listeners.get(prop).has(id)
+            return;
+        }
+
+        console.log("removing listener from prop: " + prop + " and listenerId of: " + id)
+
+        this.listeners.get(prop).delete(id);
+    }
+
     notify(prop) {
         if (!this.listeners.has(prop)) {
             return;
@@ -43,8 +53,8 @@ class Reactive {
         for (const [listenerId, listener] of this.listeners.get(prop).entries()) {
             // window.gameState.resources.set(key, value);
             // list
-            console.log(listenerId)
-            console.log(listener)
+            // console.log(listenerId)
+            // console.log(listener)
             listener(this.contents[prop]);
         }
         // this.listeners.get(prop).forEach(listener => listener(this.contents[prop]));

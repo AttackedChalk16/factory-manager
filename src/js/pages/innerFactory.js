@@ -393,13 +393,18 @@ function createFactoryInfo() {
     productNumHeader.innerHTML = window.gameState.regions[currentRegion].factories[factoryNum].productType.name + ":\t\t\t" + 
         window.gameState.regions[currentRegion].reactiveData.contents[productString].toFixed(2);
 
-    window.gameState.regions[currentRegion].reactiveData.listen(productString,  (productString+"Count"),
+    window.gameState.regions[currentRegion].reactiveData.listen(productString,  (productString+"InnerFactoryCount"),
         (change) => {
-            let countString = window.gameState.regions[currentRegion].factories[factoryNum].productType.name;
-            countString = countString + ":\t\t\t" + change.toFixed(2);
             let productElement = document.getElementById("productCount");
-            if (productElement != null && (window.clickedElement.id.replace("factory", "") -1) == factoryNum) {
-                productElement.innerHTML = countString;
+            if (productElement != null) {
+                let countString = window.gameState.regions[currentRegion].factories[factoryNum].productType.name;
+                countString = countString + ":\t\t\t" + change.toFixed(2);
+
+                if ((window.clickedElement.id.replace("factory", "") -1) == factoryNum) {
+                    productElement.innerHTML = countString;
+                }
+            } else {
+                window.gameState.regions[currentRegion].reactiveData.removeListener(productString,  (productString+"InnerFactoryCount"))
             }
         });
 
@@ -414,14 +419,16 @@ function createFactoryInfo() {
         // CHANGE WHEN MULTIPLE REGIONS ADDED
         resourceNumHeader.innerHTML = window.gameState.resources.get(resourceString).name + ":\t\t\t" 
             + window.gameState.regions[currentRegion].reactiveData.contents[resourceString].toFixed(2);
-        window.gameState.regions[currentRegion].reactiveData.listen(resourceString, (resourceString+"Count"), 
+        window.gameState.regions[currentRegion].reactiveData.listen(resourceString, (resourceString+"InnerFactoryCount"), 
             (change) => {
-                let countString = window.gameState.resources.get(resourceString).name;
-                // let countString = window.gameState.regions[currentRegion].factories[factoryNum].resources.get(resourceString).name;
-                countString = countString + ":\t\t\t" + change.toFixed(2);
                 let resourceElement = document.getElementById(resourceString + "Count");
+                // If the resource element is not found, remove it as a listener
                 if (resourceElement != null) {
+                    let countString = window.gameState.resources.get(resourceString).name;
+                    countString = countString + ":\t\t\t" + change.toFixed(2);
                     resourceElement.innerHTML = countString;
+                } else {
+                    window.gameState.regions[currentRegion].reactiveData.removeListener(resourceString, (resourceString+"InnerFactoryCount"));
                 }
             });
         factoryInfo.append(resourceNumHeader);
