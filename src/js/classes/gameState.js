@@ -10,7 +10,7 @@ class GameState {
         this.date = new GameDate();
         this.cash = new Money();
         this.reactiveData = new Reactive({
-            cash : 500000,
+            cash : 10000000,
             date: new Date("January 1, 2021 12:00:00")
         });
         this.researching = null;
